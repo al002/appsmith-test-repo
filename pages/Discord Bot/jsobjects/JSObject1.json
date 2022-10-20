@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "Discord Bot",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tstoreDiscordWebhook: async () => {\n\t\tawait storeValue('webhook_url', webhook_url.text);\n\t\tstoreValue('webhook_url',webhook_url.text);\n\t\tshowAlert('Discord Webhook URL saved! You can now proceed to the next Tab')\n\t\treturn(appsmith.store.webhook_url)\n\t},\n\t\tstoreGitHubRepo: async () => {\n\t\tawait storeValue('repo_name', repo_name.text);\n\t\tstoreValue('repo_name',repo_name.text);\n\t\treturn(appsmith.store.repo_name)\n\t},\n\t\tstoreRepoOwner: async () => {\n\t\tawait storeValue('github_username', github_username.text);\n\t\tstoreValue('github_username',github_username.text);\n\t\treturn(appsmith.store.github_username)\n\t},\n\t\t\tstoreAccessToken: async () => {\n\t\tawait storeValue('access_token', access_token.text);\n\t\tstoreValue('access_token',access_token.text);\n\t\tshowAlert('GitHub API details saved! You can now close the Modal')\n\t\treturn(appsmith.store.access_token)\n\t},\n\t\tstoreInfo: async () => {\n\t\tawait storeValue('webhook_url', webhook_url.text);\n\t\tawait storeValue('repo_name', repo_name.text);\n\t\tawait storeValue('github_username', github_username.text);\n\t\tawait storeValue('access_token', access_token.text);\n\t\tshowAlert('APIs have been set! You can now close the Modal')\n\t},\n\tmessage: () => {\n\t\tvar apibody=GetRelease.data.body\n\t\tconst modifiedBody= apibody.replace(/ *\\([^)]*\\) */g, \"\")\n\t\treturn ((GetRelease.data.name) + \" is out🎉 \\n\\n\" + (modifiedBody) + \"\\n\\nCheck the release out at \" + (GetRelease.data.html_url) )\n\t},\n\t\tonOpen: async () => {\n\t\tif(appsmith.mode != \"EDIT\") {showModal('API_setup_modal')}\n\t},\n\t\n\t\topenSetup: async () => {\n\t\tif(appsmith.mode == \"EDIT\") {showModal('API_setup_modal')}\n\t},\n}",
+    "variables": []
+  },
+  "id": "Discord Bot_JSObject1",
+  "deleted": false,
+  "gitSyncId": "62b2b48240b36d1624790e63_62b2bbd020ae3225cef0d1c9"
+}
